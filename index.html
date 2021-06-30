@@ -11,24 +11,24 @@
 </head>
 <body>
     <nav>
-        <div class="nav-header">
+        <div class="nav_header">
             <a href="https://www.netrivals.com">
                 <img class="logo" src="https://www.netrivals.com/wp-content/uploads/2020/11/logo-positiu-1-1.png"/>
             </a>
-            <img id="hamburguer" class="mbl-menu only_mbl" src="images/menu.png"/>
+            <img id="hamburguer" class="mbl_menu only_mbl" src="images/menu.png"/>
         </div>  
         
-        <ul id="nav-options" class="nav-options only_dsk">
-            <li class="nav-option">
+        <ul id="nav_options" class="nav_options only_dsk">
+            <li class="nav_option">
                 <a href="#">My products</a>
             </li>
-            <li class="nav-option">
+            <li class="nav_option">
                 <a href="#">Prices formulas</a>
             </li>
-            <li class="nav-option">
+            <li class="nav_option">
                 <a href="#">Market position</a>
             </li>
-            <li class="nav-option">
+            <li class="nav_option">
                 <a href="#">Settings</a>
             </li>
         </ul>
@@ -39,10 +39,22 @@
         </header>
 
         <section>
-            <p id="list-caption" class="list-caption" hidden> Showing 1 of 10 </p>
+            <p id="list_caption" class="list_caption"> Showing 2 of 2 products </p>
             
-            <ul id="products-list" class="products-list">
-                
+            <ul id="products_list" class="products_list">
+                <li class="product_item">
+                    <div class="original_device">
+                        <img src="/images/Xiamoi.png" alt="Xiaomi" srcset="">
+                    </div>
+                    
+                    <div class="operation">
+                        Multiplication
+                    </div>
+                    <div class="modificate_device">
+                        <img class="only_dsk" src="/images/Xiamoi.png" alt="" srcset="">
+                    </div>
+                    
+                </li>
             </ul>
         </section>
     </main>
@@ -50,7 +62,7 @@
     <script>
         $(document).ready(function() { 
             $("#hamburguer").click(function(){
-                $("#nav-options").toggle(500);
+                $("#nav_options").toggle(500);
             });
         });
     </script>
