@@ -1,5 +1,10 @@
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
+    font-family: Roboto, sans-serif;
 }
 
 .nav-header {
@@ -17,6 +22,20 @@ body {
     margin: 0 30px;
 }
 
+nav {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+}
+
+.nav-option {
+    list-style: none;
+    margin: 5px 0;
+}
+
+.nav-option a {
+    text-decoration: none;
+}
+
 @media (max-width: 600px) {
     .only_dsk {
         display: none;
@@ -26,5 +45,23 @@ body {
 @media (min-width: 600px) {
     .only_mbl {
         display: none;
+    }
+    
+    body {
+        display: flex;
+    }
+    
+    nav {
+        width: 15%;
+        border-bottom: none;
+        border-right: 1px solid lightgray;
+        height: 100%;
+        position: sticky;
+        top: 0;
+    }
+    
+    .nav-option {
+        list-style: none;
+        margin: 15px 0;
     }
 }
