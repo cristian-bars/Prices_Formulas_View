@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.netrivals.com/wp-content/uploads/2020/11/IMAGO-70x70.png" sizes="32x32">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Challenge Netrivals</title>
 </head>
 <body>
@@ -16,7 +18,7 @@
             <img id="hamburguer" class="mbl-menu only_mbl" src="images/menu.png"/>
         </div>  
         
-        <ul id="nav-options" class="nav-options">
+        <ul id="nav-options" class="nav-options only_dsk">
             <li class="nav-option">
                 <a href="#">My products</a>
             </li>
@@ -44,5 +46,14 @@
             </ul>
         </section>
     </main>
+    
+    <script>
+        $(document).ready(function() { 
+            $("#hamburguer").click(function(){
+                $("#nav-options").toggle();
+            });
+        });
+    </script>
+    
 </body>
 </html>
