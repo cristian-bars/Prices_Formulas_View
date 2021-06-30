@@ -1,0 +1,17 @@
+{
+    "products" : [
+        {  
+            "id": "60bff2e7c9f34950440d542c",
+            "description": "Mobile",
+            "picture": "images/xiamoi.png",
+            "price": 320
+        },
+        {
+            "id": "60bff2e7e4cf0590687fb53c",
+            "description": "Watch",
+            "picture": "images/watch.png",
+            "price": 150
+        }
+    ]
+
+}
