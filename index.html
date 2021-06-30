@@ -52,13 +52,13 @@
                     </div>
                     
                     <div class="operation">
-                        <select id="operation" name="operation_select">
+                        <select id="operation" name="operation_select" class="operation_select">
                             <option value="+">Plus price</option>
                             <option value="-">Rest price</option>
                             <option value="*">Multuply price</option>
                             <option value="/">Divided price</option>
                         </select>
-                        <input type="number" name="number_value" id="number_value">
+                        <input type="number" name="number_value" class="number_value" id="number_value">
                         <div id="save_operation" class="save_operation">Save</div>
                     </div>
                     <div class="modificate_device">
@@ -87,16 +87,16 @@
                 let result;
                 switch (operator) {
                     case "+":
-                        result = origin_price + operation_number;
+                        result = parseInt(origin_price) + parseInt(operation_number);
                         break;
                     case "-":
-                        result = origin_price - operation_number;
+                        result = parseInt(origin_price) - parseInt(operation_number);
                         break;
                     case "*":
-                        result = origin_price * operation_number;
+                        result = parseInt(origin_price) * parseInt(operation_number);
                         break;
                     case "/":
-                        result = origin_price / operation_number;
+                        result = parseInt(origin_price) / parseInt(operation_number);
                         break;
                 }
                 let div_result = document.getElementById("price_value_result");

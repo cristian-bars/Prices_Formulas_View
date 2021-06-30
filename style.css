@@ -54,6 +54,22 @@ main {
     justify-content: space-evenly;
 }
 
+.operation_select {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.number_value {
+    width: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 600px) {
     .only_dsk {
         display: none;
@@ -85,5 +101,9 @@ main {
     
     .product_item img {
         width: 230px;
+    }
+    
+    .operation {
+        margin-top: 100px;
     }
 }
