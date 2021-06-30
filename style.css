@@ -1,0 +1,25 @@
+.nav-header {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 20%;
+}
+
+.mbl-menu {
+    width: 20px;
+    margin: 0 30px;
+}
+
+@media (max-width: 600px) {
+    .only_dsk {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) {
+    .only_mbl {
+        display: none;
+    }
+}
