@@ -39,7 +39,7 @@
         </header>
 
         <section>
-            <p id="list_caption" class="list_caption"> Showing 2 of 2 products </p>
+            <p id="list_caption" class="list_caption"> Showing 3 of 3 products </p>
             
             <ul id="products_list" class="products_list">
                 <li class="product_item">
@@ -84,6 +84,60 @@
     
     <script>
         $(document).ready(function() { 
+            function createNode(element) {
+                return document.createElement(element);
+            }
+
+            function append(parent, el) {
+                return parent.appendChild(el);
+            }
+            
+            const ul = document.getElementById('products_list');
+            fetch("assets/products.json")
+                .then(response => {return response.json();})
+                .then(function(data){
+                    let products = data.products;
+                    return products.map(function(product) {
+                        let html = `<div class="original_device">
+                        <img src="${product.picture}" alt="Xiaomi">
+                        <div id="original_price" class="price">
+                            <div id="price_value" class="price_value">${product.price}</div>
+                            <div class="currency">€</div>
+                        </div>
+                        </div>
+                        <div class="operation">
+                        <select id="operation" name="operation_select" class="operation_select" disabled>
+                            <option value="+">Plus price</option>
+                            <option value="-">Rest price</option>
+                            <option value="*">Multuply price</option>
+                            <option value="/">Divided price</option>
+                        </select>
+                        <input type="number" name="number_value" class="number_value" id="number_value" placeholder="Value" disabled>
+                        <div class="buttons">
+                            <div id="edit_operation" class="button_operation">Edit</div>
+                            <div id="save_operation" class="button_operation hide">Save</div>
+                        </div>
+                        <div id="modificated_price" class="price only_mbl">
+                            <div class="price_text">Modified price </div>
+                            <div id="price_value_result_mbl" class="price_value"></div>
+                            <div class="currency">€</div>
+                        </div>
+                    </div>
+                    <div class="modificate_device">
+                        <img class="only_dsk" src="/images/xiamoi.png" alt="" srcset="">
+                        <div id="modificated_price" class="price only_dsk">
+                            <div id="price_value_result_dsk" class="price_value"></div>
+                            <div class="currency">€</div>
+                        </div>
+                    </div>`;
+                        
+                        let li = createNode('li');
+                        li.classList.add('product_item');
+                        li.innerHTML = html;
+                         append(ul, li);
+                });
+            });
+            
             let div_result_dsk = document.getElementById("price_value_result_dsk");
             let div_result_mbl = document.getElementById("price_value_result_mbl");
             div_result_dsk.textContent = document.getElementById("price_value").textContent;
@@ -91,7 +145,9 @@
             $("#hamburguer").click(function(){
                 $("#nav_options").toggle(500);
             });
+            
             let active = false;
+            
             $("#edit_operation").click(function(){
                 if(active){
                     $("#save_operation").addClass("hide");
